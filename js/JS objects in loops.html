@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<p id="demo"></p>
+
+<script>
+const list = {ins1:1, ins2:2, ins3:3}; 
+
+let tx = "";
+for (let [A, AM] of Object.entries(list)) {
+  tx += A + ": " + AM + "<br>";
+}
+
+document.getElementById("demo").innerHTML = tx;
+</script>
+
+</body>
+</html>
