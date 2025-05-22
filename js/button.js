@@ -7,6 +7,6 @@ button.onclick = function () {
         alert('Welcome to our portial')
     }
     if(ageIn.value < 18){
-        alert('You are not allowed to log in')
+        alert('You are not allowed to log in!')
     }
 }
