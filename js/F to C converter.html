@@ -1,32 +1,8 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>JavaScript Functions</h1>
-
-<p>Enter a temperature in Fahrenheit to convert it to Celsius:</p>
-<p id="demo"></p>
-
-<script>
-function toCelsius(f) {
-  return (5/9) * (f - 32);
-}
-
-// گرفتن دما از کاربر
-let fahrenheit = prompt("Enter temperature in Fahrenheit:");
-
-// تبدیل مقدار ورودی به عدد
-fahrenheit = parseFloat(fahrenheit);
-
-// تبدیل به سلسیوس و نمایش
-if (!isNaN(fahrenheit)) {
-  let celsius = toCelsius(fahrenheit);
-  document.getElementById("demo").innerHTML = 
-    fahrenheit + "°F is " + celsius.toFixed(2) + "°C";
-} else {
-  document.getElementById("demo").innerHTML = "Invalid input.";
-}
-</script>
-
-</body>
+  <head>
+<span class="spn">Plate 1:</span>
+  </head>
+  <body>
+  </body>
 </html>
