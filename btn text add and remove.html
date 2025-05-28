@@ -1,0 +1,60 @@
+<html lang="en">  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Sample Page</title>
+  </head>
+  <body>
+    <h1>Welcome to My Sample Page</h1> 
+    <button id="addBtn">اضافه کردن متن</button>
+    <button id="removeBtn">حذف متن</button>
+    <div id="output"></div>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 20px;
+      }
+      h1 {
+        color: #2c3e50;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #2980b9;
+        color: ;
+      }
+      #output {
+        margin-top: 20px;
+      }
+  
+    </style>
+
+    
+    <script> 
+      document.getElementById('addBtn').addEventListener('click', function() {
+        const outputDiv = document.getElementById('output');
+        const newText = document.createElement('p');
+        newText.textContent = 'متن جدید اضافه شد!';
+        outputDiv.appendChild(newText);
+      });
+      document.getElementById('removeBtn').addEventListener('click', function() {
+        const outputDiv = document.getElementById('output');
+        if (outputDiv.lastChild) {
+          outputDiv.removeChild(outputDiv.lastChild);
+        } else {
+          alert('هیچ متنی برای حذف وجود ندارد!');
+        }
+      });
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>

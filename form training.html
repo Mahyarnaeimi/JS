@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f2f5;
+      padding: 40px;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background: #007BFF;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    #feedback {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="contactForm">
+    <h2>Contact Us</h2>
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <textarea id="message" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+    <p id="feedback"></p>
+  </form>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const feedback = document.getElementById("feedback");
+
+      if (!name || !email || !message) {
+        feedback.style.color = "red";
+        feedback.textContent = "Please fill in all fields.";
+        return;
+      }
+
+      // Save to Local Storage
+      const contactData = {
+        name,
+        email,
+        message,
+        time: new Date().toISOString()
+      };
+
+      // Optional: Save as array of messages
+      let messages = JSON.parse(localStorage.getItem("messages")) || [];
+      messages.push(contactData);
+      localStorage.setItem("messages", JSON.stringify(messages));
+
+      feedback.style.color = "green";
+      feedback.textContent = `Thank you, ${name}! Your message was saved.`;
+
+      // Reset form
+      document.getElementById("contactForm").reset();
+    });
+  </script>
+
+</body>
+</html>
