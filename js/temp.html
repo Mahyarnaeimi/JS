@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">  
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Click Example</title>
-  </head> 
-  <body>
-    <button id="btn">Click me</button>
-    
-    <script>  
-      const btn = document.getElementById('btn');
-      btn.addEventListener('click', () => {
-      alert('Button clicked!');
-    });
-    </script>
-  </body>
-</html>
-<!DOCTYPE html>
+<style>
+  .container {
+    position: relative;
+    height: 300px;
+    background: #f0f0f0;
+  }
+
+  .box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 150px; /* Specific height */
+    background: steelblue;
+  }
+</style>
+
+<div class="container">
+  <div class="box"></div>
+</div>

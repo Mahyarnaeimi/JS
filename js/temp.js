@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">  
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Click Example</title>
-  </head> 
-  <body>
-    <button id="btn">Click me</button>
-    
-    <script>  
-      const btn = document.getElementById('btn');
-      btn.addEventListener('click', () => {
-      alert('Button clicked!');
-    });
-    </script>
-  </body>
-</html>
-<!DOCTYPE html>
+async function fetchData() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  const data = await response.json();
+  console.log(data);
+}
+
+fetchData();
