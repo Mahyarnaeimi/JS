@@ -71,6 +71,9 @@
       const message = document.getElementById("message").value.trim();
       const feedback = document.getElementById("feedback");
 
+     //Checks if any of the required form fields (name, email, or message) are empty.
+     //If any field is missing, sets the feedback message color to red and displays
+     //an error message prompting the user to fill in all fields, then stops further execution.
       if (!name || !email || !message) {
         feedback.style.color = "red";
         feedback.textContent = "Please fill in all fields.";

@@ -4,42 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <style></style>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        margin-top: 20px;
+      }
+      .row {
+        margin-bottom: 10px;
+      }
+      .col-sm {
+        margin: 5px;
+        background-color: #a7a7a7;
+        padding: 15px;
+        border-radius: 5px;
+      }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
   </head> 
   <body>
-   <form id="contactForm">
-  <input type="text" id="name" placeholder="نام شما"><br>
-  <input type="email" id="email" placeholder="ایمیل شما"><br>
-  <textarea id="message" placeholder="پیام شما"></textarea><br>
-  <button type="submit">ارسال</button>
-</form>
+ <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..\D:\Prop\ren 1.jpg" class="d-block w-100" alt="...">
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 
-<p id="feedback" style="color: green; font-weight: bold;"></p>
-
-
-    <script>  document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const feedback = document.getElementById("feedback");
-
-  // اعتبارسنجی
-  if (!name || !email || !message) {
-    feedback.style.color = "red";
-    feedback.textContent = "لطفاً تمام فیلدها را پر کنید.";
-    return;
-  }
-
-  // نمایش پیام تشکر
-  feedback.style.color = "green";
-  feedback.textContent = `✅ ممنون ${name}! پیام شما با موفقیت ارسال شد.`;
-  
-  // پاک‌سازی فرم (اختیاری)
-  document.getElementById("contactForm").reset();
-});
-
-    </script>
   </body>
 </html>
