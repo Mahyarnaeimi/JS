@@ -1,0 +1,228 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Rosarivo', cursive;
+     line-height: 1.6;
+     color: white;
+     background: linear-gradient(45deg, #283618 0%, #606C38 50%, #283618 100%);
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+     position: relative;
+ }
+
+
+
+ /* Main content container */
+ .container {
+     text-align: center;
+     z-index: 2;
+     max-width: 800px;
+     padding: 2rem;
+     background: rgba(255, 255, 255, 0.05);
+     backdrop-filter: blur(15px);
+     border-radius: 25px;
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+     animation: slideIn 1s ease-out;
+ }
+
+ @keyframes slideIn {
+     from {
+         opacity: 0;
+         transform: translateY(50px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+
+
+ /* Typography */
+ .main-title {
+     font-size: 4rem;
+     margin-bottom: 1rem;
+     background: linear-gradient(45deg, #da8a30, #db6d0c, #da8a30);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+     text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+     animation: glow 3s ease-in-out infinite alternate;
+ }
+
+ @keyframes glow {
+     from {
+         filter: drop-shadow(0 0 10px rgba(218, 138, 48, 0.3));
+     }
+
+     to {
+         filter: drop-shadow(0 0 25px rgba(218, 138, 48, 0.6));
+     }
+ }
+
+ .subtitle {
+     font-size: 1.8rem;
+     margin-bottom: 2rem;
+     opacity: 0.9;
+     font-style: italic;
+ }
+
+ .description {
+     font-size: 1.3rem;
+     margin-bottom: 3rem;
+     opacity: 0.8;
+     line-height: 1.8;
+ }
+
+ /* Progress bar */
+ .progress-container {
+     width: 100%;
+     max-width: 400px;
+     height: 8px;
+     background: rgba(255, 255, 255, 0.2);
+     border-radius: 10px;
+     margin: 2rem auto;
+     overflow: hidden;
+     position: relative;
+ }
+
+ .progress-bar {
+     height: 100%;
+     background: linear-gradient(45deg, #da8a30, #db6d0c);
+     border-radius: 10px;
+     animation: progress 3s ease-in-out infinite;
+     position: relative;
+ }
+
+ .progress-bar::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+     animation: shine 2s ease-in-out infinite;
+ }
+
+ @keyframes progress {
+     0% {
+         width: 0%;
+     }
+
+     50% {
+         width: 75%;
+     }
+
+     100% {
+         width: 100%;
+     }
+ }
+
+ @keyframes shine {
+     0% {
+         transform: translateX(-100%);
+     }
+
+     100% {
+         transform: translateX(100%);
+     }
+ }
+
+ /* Loading dots */
+ .loading-dots {
+     display: inline-flex;
+     gap: 8px;
+     margin-top: 1rem;
+ }
+
+ .dot {
+     width: 12px;
+     height: 12px;
+     background: #da8a30;
+     border-radius: 50%;
+     animation: pulse 1.5s ease-in-out infinite;
+ }
+
+ .dot:nth-child(2) {
+     animation-delay: 0.3s;
+ }
+
+ .dot:nth-child(3) {
+     animation-delay: 0.6s;
+ }
+
+ @keyframes pulse {
+
+     0%,
+     80%,
+     100% {
+         transform: scale(0.8);
+         opacity: 0.5;
+     }
+
+     40% {
+         transform: scale(1.2);
+         opacity: 1;
+     }
+ }
+
+ /* Back button */
+ .back-button {
+     display: inline-block;
+     background: rgba(221, 161, 94, 0.3);
+     color: white;
+     padding: 1rem 2rem;
+     text-decoration: none;
+     border-radius: 50px;
+     border: 2px solid rgba(255, 255, 255, 0.3);
+     font-weight: 600;
+     transition: all 0.3s ease;
+     backdrop-filter: blur(10px);
+     margin-top: 2rem;
+     font-family: 'Rosarivo', cursive;
+     font-size: 1.1rem;
+ }
+
+ .back-button:hover {
+     background: rgba(188, 108, 37, 0.6);
+     transform: translateY(-3px);
+     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+     border-color: rgba(255, 255, 255, 0.5);
+ }
+
+
+
+ /* Responsive design */
+ @media (max-width: 768px) {
+     .container {
+         margin: 1rem;
+         padding: 1.5rem;
+     }
+
+     .main-title {
+         font-size: 3rem;
+     }
+
+     .subtitle {
+         font-size: 1.5rem;
+     }
+
+     .description {
+         font-size: 1.1rem;
+     }
+
+     .construction-icon {
+         font-size: 4rem;
+     }
+ }
