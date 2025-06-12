@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.8",
     "next.js": "^1.0.3",
     "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.8"
   }
 }

@@ -1,7 +1,8 @@
-async function fetchData() {
-  const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
-  const data = await response.json();
-  console.log(data);
+for (let i = 1; i <= 5; i++) {
+  let row = "";
+  for (let j = 1; j <= i; j++) {
+    row += "* ";
+  }
+  console.log(row);
 }
 
-fetchData();
