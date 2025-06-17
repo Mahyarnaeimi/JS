@@ -1,25 +1,10 @@
-class Car {
-  constructor(make, model, year) {
-    // Encapsulated data
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    this.isEngineRunning = false;
-    this.currentSpeed = 0;
-  }
+const characters = ["Goku", "Chi-Chi","Vegeta", "Bulma", "Krillin", "Android 18", "Yamcha"];
 
-  // Encapsulated methods
-  startEngine() {
-    this.isEngineRunning = true;
-    console.log('Engine started.');
-  }
-
-  accelerate(speed) {
-    if (this.isEngineRunning) {
-      this.currentSpeed += speed;
-      console.log(`Accelerated to ${this.currentSpeed} km/h.`);
-    } else {
-      console.log('Engine is not running. Please start the engine first.');
-    }
-  }
+const addIsCool = characters.map(name => name + " is cool");
+const longNamedChars = characters.filter(name => name.length > 6);
+const bulmasIndex = characters.findIndex(name => name === "Bulma");
+const indexOfName = (nameToFind) => {
+	return characters.findIndex(name => {
+		return name === nameToFind
+	});
 }
