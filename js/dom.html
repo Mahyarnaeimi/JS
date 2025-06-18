@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dom.css" />
+    <title>DOM Sandbox</title>
+
+
+  </head>
+  <body>
+    <header id="cool-header">
+      <h1 style="color: red">DOM + JS</h1>
+			<button type="submit" disabled>I do nothing!</button>
+    </header>
+
+		<form>
+			<label for="fname">First name:</label><br>
+			<input type="text" id="fname" name="fname"><br>
+			<label for="lname">Last name:</label><br>
+			<input type="text" id="lname" name="lname">
+			<button type="submit">Submit</button>
+		</form> 
+
+
+		<div>
+			Score: <span id="score">0</span>
+		</div>
+    <article>
+      <h2>Here be some text</h2>
+      <p>I contain text</p>
+      <p>I contain more text</p>
+      <p>You guessed it... text</p>
+    </article>
+
+    <main>
+			<h2>Sections of boxes</h2>
+      <section class="row text" id="boxContainer1">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="blue box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+				<button class="box" id="new-box">NEW</button>
+      </section>
+
+      <section class="row" id="boxContainer2">
+        <button class="box"></button>
+        <button class="box"></button>
+        <button class="red box"></button>
+        <button class="box"></button>
+        <button class="box"></button>
+      </section>
+    </main>
+    <script src="./dom.js"></script>
+		<!-- <script src="./dom2.js"></script> -->
+  </body>
+</html>
