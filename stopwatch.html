@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Stopwatch</title>
+    <link rel="stylesheet" href="RPS_Style.css" />
+</head>
+
+<body>
+
+    <!-- simple stopwatch with start, stop, reset functionality -->
+
+    <!-- <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+    <p id="timer">0</p>
+
+    <script>
+        let count = 0;
+        let interval = null;
+
+        function start() {
+            if (interval) return;
+            interval = setInterval(() => {
+                count++;
+                document.getElementById("timer").textContent = count;
+            }, 1000);
+        }
+
+        function stop() {
+            clearInterval(interval);
+            interval = null;
+        }
+
+        function reset() {
+            stop();
+            count = 0;
+            document.getElementById("timer").textContent = count;
+        }
+    </script> -->
+
+
+    <!-- advanced stopwatch with milliseconds -->
+     
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+    <p id="timer">00:00:00.000</p>
+
+    <script>
+        let startTime = 0;
+        let elapsedTime = 0;
+        let timerInterval;
+
+        function start() {
+            if (timerInterval) return; // avoid multiple intervals
+
+            startTime = Date.now() - elapsedTime;
+
+            timerInterval = setInterval(() => {
+                elapsedTime = Date.now() - startTime;
+                document.getElementById("timer").textContent = formatTime(elapsedTime);
+            }, 10); // update every 10ms for smoother milliseconds
+        }
+
+        function stop() {
+            clearInterval(timerInterval);
+            timerInterval = null;
+        }
+
+        function reset() {
+            stop();
+            elapsedTime = 0;
+            document.getElementById("timer").textContent = "00:00:00.000";
+        }
+
+        function formatTime(ms) {
+            let milliseconds = ms % 1000;
+            let totalSeconds = Math.floor(ms / 1000);
+            let seconds = totalSeconds % 60;
+            let minutes = Math.floor(totalSeconds / 60) % 60;
+            let hours = Math.floor(totalSeconds / 3600);
+
+            // Add leading zeros
+            return (
+                String(hours).padStart(2, '0') + ":" +
+                String(minutes).padStart(2, '0') + ":" +
+                String(seconds).padStart(2, '0') + "." +
+                String(milliseconds).padStart(3, '0')
+            );
+        }
+    </script>
+
+</body>
