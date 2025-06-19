@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Place Random Places</title>
+    <link rel="stylesheet" href="RPS_Style.css" />
+</head>
+
+<body>
+    <h1> Placing Buttons in Random Places on the Screen</h1>
+
+    <button id="moveBtn">Click me!</button>
+
+    <script>
+        const btn = document.getElementById("moveBtn");
+
+
+        // Add an event listener to the button/ to handle click events
+        // Get the button element by its ID
+        btn.addEventListener("click", () => {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            // Ensure the button stays within the viewport
+            // Generate random x and y coordinates
+
+            
+            btn.style.position = "absolute";
+            // Set the button's position to absolute
+            // so it can be moved freely
+
+            btn.style.left = x + "px";
+            // Set the button's left position
+            // to a random x coordinate
+            btn.style.top = y + "px";
+            // Set the button's top position
+            // to a random y coordinate
+        });
+    </script>
+
+</body>
