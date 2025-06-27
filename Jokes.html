@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jokes</title>
+</head>
+
+<body>
+  <h1>Get a Joke!</h1>
+  <form>
+    <button type="submit">Select a Joke type</button>
+
+    <label for="joke-type" sytle="display:none"></label>
+
+    <select name="joke-type" id="joke-type">
+      <option value="" disabled selected></option>
+      <option value="general">General</option>
+      <option value="knock-knock">Knock-Knock</option>
+      <option value="programming">Programming</option>
+      <option value="dad">Dad</option>
+    </select>
+
+
+  </form>
+
+  <div id="joke-display" style="margin-top: 1em; font-weight: bold;"></div>
+
+  <script>
+    const validTypes = ["general", "knock-knock", "programming", "dad"];
+    const OPTION = document.getElementById("joke-type");
+    const jokeDisplay = document.getElementById("joke-display");
+
+    document.querySelector("form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      jokeDisplay.textContent = ""; // پاک کردن متن قبلی
+
+      if (OPTION.value === "") {
+        jokeDisplay.textContent = "Please select a joke type.";
+        return;
+      }
+
+      try {
+        const response = await fetch(`https://official-joke-api.appspot.com/jokes/${OPTION.value}/random`);
+        const data = await response.json();
+
+        if (data.length === 0) {
+          throw new Error("Didn't get any jokes");
+        } else {
+          const joke = data[0];
+          jokeDisplay.textContent = `${joke.setup} — ${joke.punchline}`;
+        }
+      } catch (error) {
+        jokeDisplay.textContent = "Oops! Something went wrong: " + error.message;
+      }
+    });
+  </script>
+</body>
+
+</html>
